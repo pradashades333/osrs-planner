@@ -1,0 +1,235 @@
+#root {
+  width: 900px;
+  text-align: left;
+}
+
+.app {
+  padding: 24px 32px 64px;
+  @media (max-width: 640px) {
+    padding: 16px 16px 48px;
+  }
+}
+
+header h1 {
+  margin-bottom: 4px;
+}
+
+.tagline {
+  margin-bottom: 24px;
+}
+
+.muted {
+  color: var(--text);
+}
+
+.small {
+  font-size: 14px;
+}
+
+/* Lookup form */
+
+.lookup {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.lookup input,
+.lookup select,
+.lookup button {
+  font: inherit;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.lookup input {
+  flex: 1;
+  min-width: 160px;
+}
+
+.lookup button {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.lookup button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  padding: 12px 16px;
+  margin-bottom: 24px;
+  border-radius: 6px;
+  border: 1px solid var(--accent-border);
+  background: var(--accent-bg);
+  color: var(--text-h);
+}
+
+/* Cards */
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.count {
+  font-size: 14px;
+  font-family: var(--mono);
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+.player-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.player-card h2 {
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.stats {
+  display: flex;
+  gap: 32px;
+  margin: 0;
+}
+
+.stats dt {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stats dd {
+  margin: 2px 0 0;
+  font-family: var(--mono);
+  font-size: 20px;
+  color: var(--text-h);
+}
+
+/* Skills */
+
+.skill-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.skill-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.skill-name {
+  text-transform: capitalize;
+  color: var(--text-h);
+  font-size: 15px;
+}
+
+.skill-level {
+  font-family: var(--mono);
+  color: var(--text-h);
+}
+
+.bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--code-bg);
+  overflow: hidden;
+  margin: 4px 0;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--accent);
+}
+
+/* Quests */
+
+.quest-list,
+.order-list {
+  margin: 0;
+  padding: 0;
+}
+
+.quest-list {
+  list-style: none;
+}
+
+.quest-list > li {
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+}
+
+.quest-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.quest-name {
+  color: var(--text-h);
+}
+
+.ghost {
+  font: inherit;
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ghost:hover {
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+.reasons {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+.reasons li {
+  text-transform: capitalize;
+}
+
+.order-list {
+  padding-left: 20px;
+  margin-top: 12px;
+}
+
+.order-list li {
+  padding: 4px 0;
+  color: var(--text-h);
+}
