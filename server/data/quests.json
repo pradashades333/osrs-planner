@@ -1,0 +1,222 @@
+[
+  {
+    "slug": "cooks-assistant",
+    "name": "Cook's Assistant",
+    "difficulty": "Novice",
+    "members": false,
+    "questPoints": 1,
+    "questPointsRequired": 0,
+    "skillReqs": {},
+    "questReqs": [],
+    "xpRewards": { "cooking": 300 }
+  },
+  {
+    "slug": "sheep-shearer",
+    "name": "Sheep Shearer",
+    "difficulty": "Novice",
+    "members": false,
+    "questPoints": 1,
+    "questPointsRequired": 0,
+    "skillReqs": {},
+    "questReqs": [],
+    "xpRewards": { "crafting": 150 }
+  },
+  {
+    "slug": "the-restless-ghost",
+    "name": "The Restless Ghost",
+    "difficulty": "Novice",
+    "members": false,
+    "questPoints": 1,
+    "questPointsRequired": 0,
+    "skillReqs": {},
+    "questReqs": [],
+    "xpRewards": { "prayer": 1125 }
+  },
+  {
+    "slug": "romeo-and-juliet",
+    "name": "Romeo & Juliet",
+    "difficulty": "Novice",
+    "members": false,
+    "questPoints": 5,
+    "questPointsRequired": 0,
+    "skillReqs": {},
+    "questReqs": [],
+    "xpRewards": {}
+  },
+  {
+    "slug": "rune-mysteries",
+    "name": "Rune Mysteries",
+    "difficulty": "Novice",
+    "members": false,
+    "questPoints": 1,
+    "questPointsRequired": 0,
+    "skillReqs": {},
+    "questReqs": [],
+    "xpRewards": {}
+  },
+  {
+    "slug": "imp-catcher",
+    "name": "Imp Catcher",
+    "difficulty": "Novice",
+    "members": false,
+    "questPoints": 1,
+    "questPointsRequired": 0,
+    "skillReqs": {},
+    "questReqs": [],
+    "xpRewards": { "magic": 875 }
+  },
+  {
+    "slug": "witchs-potion",
+    "name": "Witch's Potion",
+    "difficulty": "Novice",
+    "members": false,
+    "questPoints": 1,
+    "questPointsRequired": 0,
+    "skillReqs": {},
+    "questReqs": [],
+    "xpRewards": { "magic": 325 }
+  },
+  {
+    "slug": "dorics-quest",
+    "name": "Doric's Quest",
+    "difficulty": "Novice",
+    "members": false,
+    "questPoints": 1,
+    "questPointsRequired": 0,
+    "skillReqs": { "mining": 15 },
+    "questReqs": [],
+    "xpRewards": { "mining": 1300 }
+  },
+  {
+    "slug": "goblin-diplomacy",
+    "name": "Goblin Diplomacy",
+    "difficulty": "Novice",
+    "members": false,
+    "questPoints": 5,
+    "questPointsRequired": 0,
+    "skillReqs": {},
+    "questReqs": [],
+    "xpRewards": { "crafting": 200 }
+  },
+  {
+    "slug": "ernest-the-chicken",
+    "name": "Ernest the Chicken",
+    "difficulty": "Novice",
+    "members": false,
+    "questPoints": 4,
+    "questPointsRequired": 0,
+    "skillReqs": {},
+    "questReqs": [],
+    "xpRewards": {}
+  },
+  {
+    "slug": "vampyre-slayer",
+    "name": "Vampyre Slayer",
+    "difficulty": "Novice",
+    "members": false,
+    "questPoints": 3,
+    "questPointsRequired": 0,
+    "skillReqs": {},
+    "questReqs": [],
+    "xpRewards": { "attack": 4825 }
+  },
+  {
+    "slug": "prince-ali-rescue",
+    "name": "Prince Ali Rescue",
+    "difficulty": "Novice",
+    "members": false,
+    "questPoints": 3,
+    "questPointsRequired": 0,
+    "skillReqs": {},
+    "questReqs": [],
+    "xpRewards": {}
+  },
+  {
+    "slug": "the-knights-sword",
+    "name": "The Knight's Sword",
+    "difficulty": "Novice",
+    "members": false,
+    "questPoints": 1,
+    "questPointsRequired": 0,
+    "skillReqs": { "mining": 10 },
+    "questReqs": [],
+    "xpRewards": { "smithing": 12725 }
+  },
+  {
+    "slug": "black-knights-fortress",
+    "name": "Black Knights' Fortress",
+    "difficulty": "Novice",
+    "members": false,
+    "questPoints": 3,
+    "questPointsRequired": 12,
+    "skillReqs": {},
+    "questReqs": [],
+    "xpRewards": {}
+  },
+  {
+    "slug": "dragon-slayer-i",
+    "name": "Dragon Slayer I",
+    "difficulty": "Experienced",
+    "members": false,
+    "questPoints": 2,
+    "questPointsRequired": 32,
+    "skillReqs": {},
+    "questReqs": ["rune-mysteries"],
+    "xpRewards": { "strength": 18650, "defence": 18650 }
+  },
+  {
+    "slug": "druidic-ritual",
+    "name": "Druidic Ritual",
+    "difficulty": "Novice",
+    "members": true,
+    "questPoints": 4,
+    "questPointsRequired": 0,
+    "skillReqs": {},
+    "questReqs": [],
+    "xpRewards": { "herblore": 250 }
+  },
+  {
+    "slug": "waterfall-quest",
+    "name": "Waterfall Quest",
+    "difficulty": "Intermediate",
+    "members": true,
+    "questPoints": 1,
+    "questPointsRequired": 0,
+    "skillReqs": {},
+    "questReqs": [],
+    "xpRewards": { "attack": 13750, "strength": 13750 }
+  },
+  {
+    "slug": "tree-gnome-village",
+    "name": "Tree Gnome Village",
+    "difficulty": "Intermediate",
+    "members": true,
+    "questPoints": 2,
+    "questPointsRequired": 0,
+    "skillReqs": {},
+    "questReqs": [],
+    "xpRewards": { "attack": 11450 }
+  },
+  {
+    "slug": "the-grand-tree",
+    "name": "The Grand Tree",
+    "difficulty": "Intermediate",
+    "members": true,
+    "questPoints": 5,
+    "questPointsRequired": 0,
+    "skillReqs": { "agility": 25 },
+    "questReqs": [],
+    "xpRewards": { "attack": 18400, "magic": 7900 }
+  },
+  {
+    "slug": "monkey-madness-i",
+    "name": "Monkey Madness I",
+    "difficulty": "Master",
+    "members": true,
+    "questPoints": 3,
+    "questPointsRequired": 0,
+    "skillReqs": {},
+    "questReqs": ["tree-gnome-village", "the-grand-tree"],
+    "xpRewards": { "attack": 35000, "defence": 35000 }
+  }
+]
