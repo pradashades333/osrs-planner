@@ -1,0 +1,69 @@
+// Prisma 7 schema. The datasource URL is supplied by prisma.config.ts (which
+// reads DATABASE_URL from .env), not by env() in this file.
+
+// prisma-client-js emits plain JavaScript into node_modules/@prisma/client.
+// The newer `prisma-client` generator emits TypeScript, which this JS project
+// cannot import without a build step.
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Player {
+  id         String   @id @default(cuid())
+  rsn        String   @unique
+  mode       String   @default("main")
+  totalLevel Int      @default(32)
+  totalXp    BigInt   @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  skills      Skill[]
+  completions QuestCompletion[]
+}
+
+model Skill {
+  id       Int    @id @default(autoincrement())
+  playerId String
+  name     String
+  level    Int
+  xp       Int
+  rank     Int    @default(-1)
+
+  player Player @relation(fields: [playerId], references: [id], onDelete: Cascade)
+
+  @@unique([playerId, name])
+}
+
+model Quest {
+  id                  Int     @id @default(autoincrement())
+  slug                String  @unique
+  name                String
+  difficulty          String
+  members             Boolean @default(false)
+  questPoints         Int     @default(0)
+  questPointsRequired Int     @default(0)
+  /// Map of skill name -> required level, e.g. { "mining": 15 }
+  skillReqs           Json
+  /// Slugs of prerequisite quests
+  questReqs           String[]
+  /// Map of skill name -> xp granted on completion
+  xpRewards           Json
+
+  completions QuestCompletion[]
+}
+
+model QuestCompletion {
+  id          Int      @id @default(autoincrement())
+  playerId    String
+  questId     Int
+  completedAt DateTime @default(now())
+
+  player Player @relation(fields: [playerId], references: [id], onDelete: Cascade)
+  quest  Quest  @relation(fields: [questId], references: [id], onDelete: Cascade)
+
+  @@unique([playerId, questId])
+}
