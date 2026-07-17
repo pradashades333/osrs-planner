@@ -1,38 +1,18 @@
-import 'dotenv/config';
-import express from 'express';
-import cors from 'cors';
+import express from 'express'
+import cors from 'cors'
+import playerRouter from './routes/player.js'
+import planRouter from './routes/plan.js'
 
-import playerRoutes from './routes/player.js';
-import planRoutes from './routes/plan.js';
-import { HiscoresError } from './services/hiscores.js';
+const app = express()
 
-// Prisma returns BigInt for Player.totalXp, which JSON.stringify refuses to
-// serialise. Render it as a plain number instead of throwing.
-BigInt.prototype.toJSON = function toJSON() {
-  return Number(this);
-};
+app.use(cors())
+app.use(express.json())
 
-const app = express();
-const PORT = process.env.PORT ?? 3001;
+app.use('/api/player', playerRouter)
+app.use('/api/plan', planRouter)
 
-app.use(cors({ origin: process.env.CLIENT_ORIGIN ?? 'http://localhost:5173' }));
-app.use(express.json());
-
-app.get('/api/health', (_req, res) => res.json({ ok: true }));
-app.use('/api/player', playerRoutes);
-app.use('/api/plan', planRoutes);
-
-app.use((_req, res) => res.status(404).json({ error: 'Not found' }));
-
-// eslint-disable-next-line no-unused-vars -- Express identifies error handlers by arity.
-app.use((err, _req, res, _next) => {
-  if (err instanceof HiscoresError) {
-    return res.status(err.status).json({ error: err.message });
-  }
-  console.error(err);
-  res.status(500).json({ error: 'Something went wrong on the server.' });
-});
+const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
-  console.log(`OSRS planner API listening on http://localhost:${PORT}`);
-});
+  console.log(`Server running on http://localhost:${PORT}`)
+})
