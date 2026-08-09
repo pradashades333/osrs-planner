@@ -218,5 +218,23 @@
     "skillReqs": {},
     "questReqs": ["tree-gnome-village", "the-grand-tree"],
     "xpRewards": { "attack": 35000, "defence": 35000 }
+  },
+  {
+    "slug": "monkey-madness-ii",
+    "name": "Monkey Madness II",
+    "difficulty": "Grandmaster",
+    "members": true,
+    "questPoints": 4,
+    "questPointsRequired": 0,
+    "skillReqs": {
+      "agility": 55,
+      "crafting": 70,
+      "firemaking": 60,
+      "hunter": 60,
+      "slayer": 69,
+      "thieving": 55
+    },
+    "questReqs": ["monkey-madness-i"],
+    "xpRewards": { "hitpoints": 25000, "slayer": 25000 }
   }
 ]
