@@ -48,3 +48,13 @@ Open the URL Vite prints in the terminal, usually `http://localhost:5173`.
 ## Notes
 
 Training methods are stored in `server/data/methods.json`. They include a few common options per skill, with XP and GP rates intended as useful estimates rather than exact guarantees.
+
+## Deploying on Vercel
+
+Deploy `server` and `client` as separate Vercel projects from the same repository.
+
+- In the server project, add `DATABASE_URL` from `server/.env` as an environment variable.
+- Deploy the server first and copy its `.vercel.app` URL.
+- In the client project, add `VITE_API_BASE` with that server URL, for example `https://osrs-planner-api.vercel.app`.
+
+The client falls back to `http://localhost:3000` locally, so no change is needed for normal development.
