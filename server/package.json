@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "postinstall": "prisma generate",
     "dev": "nodemon index.js",
     "start": "node index.js",
     "seed": "node prisma/seed.js",
