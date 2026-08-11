@@ -67,3 +67,25 @@ model QuestCompletion {
 
   @@unique([playerId, questId])
 }
+
+model TrainingMethod {
+  id         Int     @id @default(autoincrement())
+  /// Matches the `name` field on Skill, e.g. "ranged", "mining"
+  skill      String
+  methodName String
+  fromLevel  Int
+  toLevel    Int
+  xpPerHour  Int
+  /// Nullable; may be negative when the method costs money
+  gpPerHour  Int?
+  /// One of "afk" | "moderate" | "active"
+  intensity  String
+  membersOnly Boolean @default(true)
+  /// My own summary of the method
+  notes      String?
+  /// Link to the guide the numbers were sourced from
+  sourceUrl  String?
+
+  @@unique([skill, methodName])
+  @@index([skill])
+}
