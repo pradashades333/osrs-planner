@@ -3,6 +3,7 @@ import './App.css'
 import Modal from './components/Modal'
 import SkillCell from './components/SkillCell'
 import MethodCard from './components/MethodCard'
+import PlannerPanel from './components/PlannerPanel'
 
 const API_BASE = (import.meta.env.VITE_API_BASE || 'http://localhost:3000').replace(/\/$/, '')
 
@@ -187,6 +188,7 @@ function App() {
               />
             ))}
           </div>
+          <PlannerPanel rsn={player.player.rsn} apiBase={API_BASE} />
         </>
       )}
 
