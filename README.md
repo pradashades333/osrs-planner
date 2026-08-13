@@ -1,5 +1,7 @@
 # OSRS Training Planner
 
+🔗 **Live app:** [osrs-training-planner.vercel.app](https://osrs-training-planner.vercel.app/)
+
 A small web app for looking up an Old School RuneScape player and finding training methods for each skill.
 
 Enter an RSN, click a skill, choose a target level, and the app shows the XP left plus a few relevant training options. Player stats come from the OSRS hiscores and are saved in Postgres.
