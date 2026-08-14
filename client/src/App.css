@@ -173,7 +173,36 @@ button:disabled { background: #2a241d; border-color: #3b322a; color: #736952; cu
 .notes { margin-bottom: 8px; color: #b3a488; font-size: 14px; }
 .card a { font-size: 13px; color: #d8b45a; }
 
+.planner-panel {
+  margin-top: 28px;
+  padding: 16px;
+  border: 1px solid #3b322a;
+  border-radius: 4px;
+  background: #221d17;
+}
+.planner-panel h2 { margin-bottom: 4px; }
+.goal-form { display: flex; gap: 8px; margin-top: 12px; }
+.goal-form input { flex: 1; min-width: 0; }
+.planner-error { margin: 12px 0 0; }
+.plan-results { margin-top: 16px; }
+.plan-summary { display: flex; flex-wrap: wrap; gap: 8px 20px; color: #f0d9a8; }
+.plan-list { display: grid; gap: 6px; }
+.plan-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 10px;
+  background: #2b2419;
+  border: 1px solid #3b322a;
+  border-radius: 3px;
+}
+.plan-row > div { display: flex; flex-direction: column; }
+.plan-row-meta { text-align: right; color: #b3a488; font-size: 13px; }
+.quest-order { margin: 0; padding-left: 22px; color: #b3a488; }
+.ready { color: #6fd68a; }
+
 @media (max-width: 420px) {
   .skill-xp { display: none; }
   .app { padding: 16px 10px 40px; }
+  .goal-form { flex-direction: column; }
 }
