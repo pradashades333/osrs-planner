@@ -1,10 +1,13 @@
 const num = (n) => Number(n).toLocaleString('en-US')
 
-export default function MethodCard({ method }) {
+export default function MethodCard({ method, badge }) {
   const gp = method.gpPerHour
   return (
-    <article className="card">
-      <h4>{method.methodName}</h4>
+    <article className={`card${badge ? ' card-best' : ''}`}>
+      <h4>
+        {method.methodName}
+        {badge && <span className="best-badge">{badge}</span>}
+      </h4>
       <div className="tags">
         <span className="tag">{method.intensity}</span>
         <span className="tag">

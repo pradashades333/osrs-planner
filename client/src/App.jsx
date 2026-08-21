@@ -42,12 +42,29 @@ function groupByIntensity(methods) {
   return groups.filter((g) => g.methods.length)
 }
 
+// Efficiency views: rank the same methods by different tradeoffs. "Fastest"
+// wants the highest XP/hr; "cheapest" wants the best gp/hr (profit beats cost,
+// so a larger gpPerHour is always better).
+const SORT_MODES = [
+  { key: 'grouped', label: 'By intensity' },
+  { key: 'fastest', label: 'Fastest' },
+  { key: 'cheapest', label: 'Cheapest' },
+]
+
+function sortMethods(methods, mode) {
+  const copy = [...methods]
+  if (mode === 'fastest') copy.sort((a, b) => b.xpPerHour - a.xpPerHour)
+  if (mode === 'cheapest') copy.sort((a, b) => b.gpPerHour - a.gpPerHour)
+  return copy
+}
+
 function SkillModal({ rsn, skill, level, xp, onClose }) {
   const current = Math.max(1, level)
   const [target, setTarget] = useState(current >= 95 ? 99 : current + 5)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [plan, setPlan] = useState(null)
+  const [sortMode, setSortMode] = useState('grouped')
 
   async function showMethods() {
     setLoading(true)
@@ -100,14 +117,45 @@ function SkillModal({ rsn, skill, level, xp, onClose }) {
           {plan.methods.length === 0 ? (
             <p className="muted">No methods seeded for this skill/range yet.</p>
           ) : (
-            groupByIntensity(plan.methods).map((group) => (
-              <section key={group.name}>
-                <h3>{group.name}</h3>
-                {group.methods.map((m) => (
-                  <MethodCard key={m.methodName} method={m} />
+            <>
+              <div className="sort-toggle" role="group" aria-label="Sort methods">
+                {SORT_MODES.map((m) => (
+                  <button
+                    key={m.key}
+                    className={sortMode === m.key ? 'active' : ''}
+                    onClick={() => setSortMode(m.key)}
+                  >
+                    {m.label}
+                  </button>
                 ))}
-              </section>
-            ))
+              </div>
+              {sortMode === 'grouped' ? (
+                groupByIntensity(plan.methods).map((group) => (
+                  <section key={group.name}>
+                    <h3>{group.name}</h3>
+                    {group.methods.map((m) => (
+                      <MethodCard key={m.methodName} method={m} />
+                    ))}
+                  </section>
+                ))
+              ) : (
+                <section>
+                  {sortMethods(plan.methods, sortMode).map((m, i) => (
+                    <MethodCard
+                      key={m.methodName}
+                      method={m}
+                      badge={
+                        i === 0
+                          ? sortMode === 'fastest'
+                            ? 'fastest xp'
+                            : 'best value'
+                          : null
+                      }
+                    />
+                  ))}
+                </section>
+              )}
+            </>
           )}
         </>
       )}

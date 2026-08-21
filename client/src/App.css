@@ -173,6 +173,46 @@ button:disabled { background: #2a241d; border-color: #3b322a; color: #736952; cu
 .notes { margin-bottom: 8px; color: #b3a488; font-size: 14px; }
 .card a { font-size: 13px; color: #d8b45a; }
 
+.card-best { border-color: #c8a860; box-shadow: inset 0 0 0 1px #c8a86055; }
+.best-badge {
+  margin-left: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: #4a3b26;
+  border: 1px solid #c8a860;
+  color: #f4e3bd;
+  vertical-align: middle;
+}
+
+.sort-toggle {
+  display: inline-flex;
+  gap: 0;
+  margin: 14px 0 4px;
+  border: 1px solid #4a3f33;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.sort-toggle button {
+  border: none;
+  border-radius: 0;
+  border-right: 1px solid #4a3f33;
+  background: #262019;
+  color: #b3a488;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+.sort-toggle button:last-child { border-right: none; }
+.sort-toggle button.active { background: #4a3b26; color: #f4e3bd; }
+
+.timeline { margin: 4px 0 8px; }
+.timeline-scroll { overflow-x: auto; }
+.timeline svg { width: 100%; min-width: 460px; height: auto; display: block; }
+.timeline-note { margin-top: 6px; }
+
 .planner-panel {
   margin-top: 28px;
   padding: 16px;

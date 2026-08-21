@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import GoalTimeline from './GoalTimeline'
 
 const num = (n) => Number(n).toLocaleString('en-US')
 const title = (value) => value[0].toUpperCase() + value.slice(1)
@@ -58,6 +59,13 @@ export default function PlannerPanel({ rsn, apiBase }) {
           </div>
           {plan.hasUnknownEstimate && (
             <p className="muted">Some goals do not have a complete training estimate yet.</p>
+          )}
+
+          {plan.skillPlans.length > 0 && (
+            <section>
+              <h3>Roadmap</h3>
+              <GoalTimeline skillPlans={plan.skillPlans} />
+            </section>
           )}
 
           {plan.skillPlans.length > 0 && (
