@@ -4,6 +4,10 @@
 
 A small web app for looking up an Old School RuneScape player and finding training methods for each skill.
 
+## Screenshot
+
+![OSRS Training Planner](client/src/assets/hero.png)
+
 Enter an RSN, click a skill, choose a target level, and the app shows the XP left plus a few relevant training options. Player stats come from the OSRS hiscores and are saved in Postgres.
 
 ## What it can plan
